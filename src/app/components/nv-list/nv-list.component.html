@@ -1,0 +1,18 @@
+<table class="table table-bordered border border-primary">
+    <caption align="top" class="text-center bg-warning p-3 fw-bold">DANH SÁCH NHÂN VIÊN</caption>
+    <input type="text" style="width: 350px;" autofocus [(ngModel)]="search" placeholder="Search" (input)="searchSP()">
+    <tr>
+        <th class="text-center p-2">id</th>
+        <th class="text-center p-2">Tên Nhân Viên</th>
+        <th class="text-center p-2">Ngày Sinh</th>
+        <th class="text-center p-2">Phái</th>
+        <th class="text-center p-2">Khu Vuc</th>
+    </tr>
+    <tr *ngFor="let nv of nhan_vien">
+        <td class="text-center p-2">{{nv.id}}</td>
+        <td class="text-center p-2">{{nv.ho}} {{nv.ten}}</td>
+        <td class="text-center p-2">{{nv.ngay_sinh | date:"dd/MM/yyy"}}</td>
+        <td class="text-center p-2">{{nv.phai == true?"NAM":"NỮ"}}</td>
+        <td class="text-center p-2">Miền {{nv.khu_vuc}}</td>
+    </tr>
+</table>

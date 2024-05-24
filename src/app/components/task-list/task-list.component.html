@@ -1,0 +1,18 @@
+<h3 class="bg-warning mt-0 p-2 fs-4">DANH SÁCH TASK</h3>
+    <input type="text" style="width: 350px;" autofocus [(ngModel)]="search" placeholder="Search" (input)="searchSP()">
+<div *ngFor="let task of tasks">
+    <div class="ms-1">
+        <p class="text-center">Tên Task: <b>{{task.ten_task}}</b></p>
+        <p class="text-center">Mô Tả: {{task.mo_ta}}</p>
+    </div>
+    <div class="mb-0 px-3 pb-2 border-bottom border-primary d-flex">
+        <div class="col-6">
+            <p>Priority: {{task.priority}}</p>
+            <p>Status: {{task.status== 0?"Chưa Hoàn Thành":"Đã Hoàn Thành"}}</p>
+        </div>
+        <div class="col-6">
+            <p>Id Nhân Viên: {{task.nhan_vien_id}}</p> 
+            <p>Id Dự Án: {{task.du_an_id}}</p>
+        </div>
+    </div>
+</div>

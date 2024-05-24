@@ -1,0 +1,16 @@
+<table class="table table-bordered border border-primary">
+    <caption align="top" class="bg-warning p-3 fw-bold text-center">DACH SÁCH DỰ ÁN</caption>
+    <input type="text" style="width: 350px;" autofocus [(ngModel)]="search" placeholder="Search" (input)="searchSP()">
+    <tr>
+        <th class="text-center p-2">id</th>
+        <th class="text-center p-2">Tên Dự Án</th>
+        <th class="text-center p-2">Ngày Bắt Đầu</th>
+        <th class="text-center p-2">Tiền</th>
+    </tr>
+    <tr *ngFor="let da of du_an">
+        <td class="text-center p-2">{{da.id}}</td>
+        <td class="text-center p-2">{{da.ten_du_an}}</td>
+        <td class="text-center p-2">{{da.ngay_start | date:"dd/MM/yyyy"}}</td>
+        <td class="text-center p-2">{{da.tien | number}} VND</td>
+    </tr>
+</table>
